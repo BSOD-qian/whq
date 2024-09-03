@@ -60,13 +60,13 @@
                 胜人者有力，自胜者强
                 <span slot="description">2024.9.3</span>
                 <mdui-avatar slot="icon" src="./avatars/23.jpg"></mdui-avatar>
-                <mdui-button slot="end-icon" variant="filled" end-icon="search" href="https://www.baidu.com/s?tn=22073068_8_oem_dg&ch=2&ie=utf-8&word=胜人者有力，自胜者强" target="_blank">百度一下</mdui-button>
+                <mdui-button slot="end-icon" variant="filled" end-icon="search" onclick="baidu('胜人者有力，自胜者强')">百度一下</mdui-button>
             </mdui-list-item>
             <mdui-list-item>
                 凡是过往，皆为序章
                 <span slot="description">2024.9.2</span>
                 <mdui-avatar slot="icon" src="./avatars/26.jpg"></mdui-avatar>
-                <mdui-button slot="end-icon" variant="filled" end-icon="search" href="https://www.baidu.com/s?tn=22073068_8_oem_dg&ch=2&ie=utf-8&word=凡是过往，皆为序章" target="_blank">百度一下</mdui-button>
+                <mdui-button slot="end-icon" variant="filled" end-icon="search" onclick="baidu('凡是过往，皆为序章')">百度一下</mdui-button>
             </mdui-list-item>
         </mdui-list>
     </div>
@@ -95,6 +95,11 @@
     <script>
         if (typeof navigator.serviceWorker !== 'undefined') {
             navigator.serviceWorker.register('sw.js')
+        }
+    </script>
+    <script>
+        function baidu(content){
+            window.open("https://www.baidu.com/s?ie=utf-8&word=" + content)
         }
     </script>
     <script src="./versioncheck.js"></script>
