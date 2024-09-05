@@ -1,6 +1,4 @@
-for (i = 0; i < 999; i++) {
-    document.getElementsByClassName('no09')[i].innerHTML = "daydream"
-    document.getElementsByClassName('no19')[i].innerHTML = "都怨你"
-    document.getElementsByClassName('no23')[i].innerHTML = "￴L.￴"
-    document.getElementsByClassName('no26')[i].innerHTML = "IRieNnE"
-}
+document.querySelectorAll(".no09").forEach(function (content) { content.textContent = "daydream" })
+document.querySelectorAll(".no19").forEach(function (content) { content.textContent = "都怨你" })
+document.querySelectorAll(".no23").forEach(function (content) { content.textContent = "L." })
+document.querySelectorAll(".no26").forEach(function (content) { content.textContent = "IRieNnE" })
