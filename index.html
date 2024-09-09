@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="module" src="./mdui/mdui.global.js"></script>
     <script type="module" src="./style.js"></script>
-    <script src="./core.js"></script>
+    <link rel="stylesheet" href="./style.css">
 
     <title>文化墙（存档）</title>
 </head>
@@ -54,8 +54,16 @@
         </mdui-tooltip>
     </mdui-top-app-bar>
     <div class="mdui-prose">
+        <div class="announcement">祝老师们教师节快乐</div>
         <mdui-list>
             <mdui-list-subheader id="202409">2024.9</mdui-list-subheader>
+            <mdui-list-item>
+                凛凛霜前行，自持岁寒姿
+                <span slot="description"><span class="no20 name"></span>/2024.9.9</span>
+                <mdui-avatar slot="icon" src="./avatars/20.jpg" class="avatar"></mdui-avatar>
+                <mdui-button-icon slot="end-icon" variant="filled" icon="search"
+                    onclick="baidu('凛凛霜前行，自持岁寒姿')"></mdui-button-icon>
+            </mdui-list-item>
             <mdui-list-item>
                 读书使人充实，思考使人深邃
                 <span slot="description"><span class="no25 name"></span>/2024.9.6</span>
@@ -130,7 +138,6 @@
             window.open("https://www.baidu.com/s?ie=utf-8&word=" + content)
         }
     </script>
-    <script src="./versioncheck.js"></script>
     <script src="./brightness.js"></script>
     <script src="./name.js"></script>
 </body>
