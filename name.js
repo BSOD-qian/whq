@@ -6,3 +6,4 @@ document.querySelectorAll(".no23").forEach(function (content) { content.textCont
 document.querySelectorAll(".no24").forEach(function (content) { content.textContent = "xhy" })
 document.querySelectorAll(".no25").forEach(function (content) { content.textContent = "￴￴ ￴￴ ￴" })
 document.querySelectorAll(".no26").forEach(function (content) { content.textContent = "IRieNnE" })
+document.querySelectorAll(".no44").forEach(function (content) { content.textContent = "sniper" })
