@@ -14,6 +14,7 @@
     <script type="module" src="./mdui/mdui.global.js"></script>
     <script type="module" src="./style.js"></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
 
     <title>文化墙（存档）</title>
 </head>
@@ -56,6 +57,20 @@
     <div class="mdui-prose">
         <mdui-list>
             <mdui-list-subheader id="202410">2024.10</mdui-list-subheader>
+            <mdui-list-item>
+                这片银河容得下任何的可能性，而人的命运也不应当只有上天给予的那一条道路
+                <span slot="description"><span class="no20 name"></span>/2024.10.16</span>
+                <mdui-avatar slot="icon" src="./avatars/20.jpg" class="avatar"></mdui-avatar>
+                <mdui-button-icon slot="end-icon" variant="filled" icon="search"
+                    onclick="baidu('这片银河容得下任何的可能性，而人的命运也不应当只有上天给予的那一条道路')"></mdui-button-icon>
+            </mdui-list-item>
+            <mdui-list-item>
+                远方啊，除了遥远，一无所有
+                <span slot="description"><span class="no21 name"></span>/2024.10.16</span>
+                <mdui-avatar slot="icon" src="./avatars/21.jpg" class="avatar"></mdui-avatar>
+                <mdui-button-icon slot="end-icon" variant="filled" icon="search"
+                    onclick="baidu('远方啊，除了遥远，一无所有')"></mdui-button-icon>
+            </mdui-list-item>
             <mdui-list-item>
                 在我看来，社会的理想制度应当是七休日
                 <span slot="description"><span class="no20 name"></span>/2024.10.15</span>
@@ -138,7 +153,8 @@
                 《质问》Question
                 <span slot="description"><span class="no44 name"></span>/2024.9.20</span>
                 <mdui-avatar slot="icon" src="./avatars/44.jpg" class="avatar"></mdui-avatar>
-                <mdui-button-icon slot="end-icon" variant="filled" icon="search" href="./img/微信图片_20240920204232.jpg" target="_blank"></mdui-button-icon>
+                <mdui-button-icon slot="end-icon" variant="filled" icon="search" href="./img/微信图片_20240920204232.jpg"
+                    target="_blank"></mdui-button-icon>
             </mdui-list-item>
             <mdui-list-item>
                 非礼勿言，非诚勿扰
@@ -225,6 +241,7 @@
                     onclick="baidu('凡是过往，皆为序章')"></mdui-button-icon>
             </mdui-list-item>
         </mdui-list>
+        <div id="aplayer"></div>
     </div>
     <mdui-navigation-drawer close-on-overlay-click id="drawer" modal close-on-esc close-on-overlay-click>
         <mdui-list>
@@ -259,13 +276,49 @@
             navigator.serviceWorker.register('sw.js')
         }
     </script>
+
+    <script src="./brightness.js"></script>
+    <script src="./name.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script>
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: true,
+            listFolded: true,
+            audio: [{
+                name: 'Relieve',
+                artist: '响&星幂Elroy&Jan Kortanidze',
+                url: './music/relieve.wav',
+                cover: './music/relieve.jpg'
+            },
+            {
+                name: 'Inverted World',
+                artist: 'ARForest',
+                url: './music/inverted_world.wav',
+                cover: './music/inverted_world.png'
+            }]
+        });
+    </script>
+    <script type="module">
+        mdui.dialog({
+            headline: "提示",
+            description: "由于您的浏览器设置，音乐无法自动播放，请手动点击播放。",
+            actions: [
+                {
+                    text: "OK",
+                    onClick: () => {
+                        ap.play();
+                    },
+                }
+            ]
+        });
+    </script>
     <script>
         function baidu(content) {
+            ap.play();
             window.open("https://www.baidu.com/s?ie=utf-8&word=" + content)
         }
     </script>
-    <script src="./brightness.js"></script>
-    <script src="./name.js"></script>
 </body>
 
 </html>
